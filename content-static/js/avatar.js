@@ -20,6 +20,12 @@ var Avatar = function() {
                 $('#character-selection-board').slideUp('slow');console.log(id);
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
+                var jsonObj;
+                $.getJSON("../jedi.json", function(data) {
+                    jsonObj = data;
+                });
+                $('#'+id).children('.character-info-card h2').text(data[$('input[name=yoda]:checked').val()]['name']);
+                $('#'+id).children('.character-info-card p').text(data[$('input[name=yoda]:checked').val()]['about']);
             }
             else {
                 $('.ct').fadeOut();
