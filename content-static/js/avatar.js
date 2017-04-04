@@ -24,8 +24,8 @@ var Avatar = function() {
                 $.getJSON("../jedi.json", function(data) {
                     jsonObj = data;
                 });console.log(jsonObj);
-                $('#'+id).children('.character-info-card h2').text(jsonObj[$('input[name=yoda]:checked').val()]['name']);
-                $('#'+id).children('.character-info-card p').text(jsonObj[$('input[name=yoda]:checked').val()]['about']);
+                $('#'+id).children('.character-info-card h2').text(jsonObj.data[$('input[name=yoda]:checked').val()]['name']);
+                $('#'+id).children('.character-info-card p').text(jsonObj.data[$('input[name=yoda]:checked').val()]['about']);
             }
             else {
                 $('.ct').fadeOut();
