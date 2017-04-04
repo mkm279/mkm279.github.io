@@ -24,7 +24,7 @@ var Avatar = function() {
                 $.getJSON("../jedi.json", function(data) {
                     jsonObj = data;
                     console.log(data);
-                });console.log(jsonObj);
+                });console.log(jsonObj.data);
             }
             else {
                 $('.ct').fadeOut();
