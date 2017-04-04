@@ -322,6 +322,9 @@ body {
     width: 29%; } }
 /* media query for smartphone portrait */
 @media only screen and (max-width: 449px) {
+  .first-page-inner-container {
+    top: 0%; }
+
   .second-page {
     height: auto; }
 

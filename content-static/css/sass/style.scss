@@ -311,6 +311,9 @@ body {
 
 /* media query for smartphone portrait */
 @include respond_to(smartphone-portrait) {
+	.first-page-inner-container {
+		top: 0%;
+	}
 	.second-page {
 		height: auto;
 	}
