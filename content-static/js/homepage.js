@@ -2,7 +2,7 @@ var Homepage = function() {
 	var proto 		= Homepage.prototype;
 
 	proto.init = function() {
-		$(document).ready(function() {console.log('here');
+		$(document).ready(function() {
 			handleSubmitClick();
 		});
 	};

@@ -17,15 +17,12 @@ var Avatar = function() {
             if($('input[name=yoda]').is(':checked')) {
                 var id = $('input[name=yoda]:checked').val();
                 var id = "character-" + id;
-                $('#character-selection-board').slideUp('slow');console.log(id);
+                $('#character-selection-board').slideUp('slow');
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
-                var jsonObj;
                 $.getJSON("../jedi.json", function(data) {
                     jsonObj = data;
                 });console.log(jsonObj);
-                $('#'+id).children('.character-info-card h2').text(jsonObj.data[$('input[name=yoda]:checked').val()]['name']);
-                $('#'+id).children('.character-info-card p').text(jsonObj.data[$('input[name=yoda]:checked').val()]['about']);
             }
             else {
                 $('.ct').fadeOut();
