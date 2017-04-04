@@ -1,0 +1,45 @@
+// min_width and max_widths to identify device types
+$desktop_width:                 1024px;
+$tablet_portrait_width:         768px;
+$smartphone_landscape_width:    450px;
+$smartphone_portrait_width:     300px;
+$smartphone_300px:              300px;
+$yellow_button_color:			#F6CE00;
+$orange_button_color:			#E36209;
+$grey_background_color:         #F9F7F6;
+$white:                         #ffffff;
+
+// Mixin: to genrate button css
+// Args: $button_width, $button_height, $button_color, additional_style_list
+@mixin button_style($button_width, $button_height, $button_color, $font_color) {
+    width:              #{$button_width};
+    height:        #{$button_height};
+    background-color:   #{$button_color};
+    color:              #{$font_color};
+    border: 			solid 1px #{$button_color};
+    border-radius:      2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    letter-spacing: 	1.5px;
+    cursor:             pointer;
+    outline: 			none;
+    text-transform:		uppercase;
+}
+
+
+// Mixin: media queries to target handheld devices
+// Args:  device_type
+@mixin respond_to($device_type) {
+    @if $device_type == square-desktop {
+        @media only screen and (min-width: 1024px) and (max-width: 1149px) { @content; }
+    }
+	@else if $device_type == tablet-portrait {
+		@media only screen and (min-width: 768px) and (max-width: 1023px) { @content; }
+	}
+	@else if $device_type == smartphone-landscape {
+	    @media only screen and (min-width: 450px) and (max-width: 767px) { @content; }
+	}
+    @else if $device_type == smartphone-portrait {
+        @media only screen and (max-width: 449px) { @content; }
+    }
+}
