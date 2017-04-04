@@ -23,6 +23,7 @@ var Avatar = function() {
                 var jsonObj;
                 $.getJSON("../jedi.json", function(data) {
                     jsonObj = data;
+                    console.log(data);
                 });console.log(jsonObj);
             }
             else {
