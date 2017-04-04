@@ -20,6 +20,7 @@ var Avatar = function() {
                 $('#character-selection-board').slideUp('slow');
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
+                var jsonObj;
                 $.getJSON("../jedi.json", function(data) {
                     jsonObj = data;
                 });console.log(jsonObj);
