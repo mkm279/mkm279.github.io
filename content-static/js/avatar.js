@@ -20,11 +20,10 @@ var Avatar = function() {
                 $('#character-selection-board').slideUp('slow');
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
-                var jsonObj;
                 $.getJSON("../jedi.json", function(data) {
-                    jsonObj = data;
-                    console.log(data);
-                });console.log(jsonObj.data);
+                    $('#'+id).find('.character-info-card h2').text(data[('input[name=yoda]:checked').val()].name);
+                    $('#'+id).find('.character-info-card p').text(data[('input[name=yoda]:checked').val()].about);
+                });
             }
             else {
                 $('.ct').fadeOut();
