@@ -15,14 +15,14 @@ var Avatar = function() {
     var handleSelectionClick = function () {  
         $('.btn-character').click(function() {
             if($('input[name=yoda]').is(':checked')) {
-                var id = $('input[name=yoda]:checked').val();
-                var id = "character-" + id;
+                var value = $('input[name=yoda]:checked').val();
+                var id = "character-" + value;
                 $('#character-selection-board').slideUp('slow');
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
-                $.getJSON("../jedi.json", function(data) {
-                    $('#'+id).find('.character-info-card h2').text(data[$('input[name=yoda]:checked').val()].name);
-                    $('#'+id).find('.character-info-card p').text(data[$('input[name=yoda]:checked').val()].about);
+                $.getJSON("../jedi.json", function(data) {console.log(data);
+                    $('#'+id).find('.character-info-card h2').text(data[value].name);
+                    $('#'+id).find('.character-info-card p').text(data[value].about);
                 });
             }
             else {
