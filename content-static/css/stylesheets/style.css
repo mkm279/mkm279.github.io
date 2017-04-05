@@ -268,7 +268,7 @@ body {
   cursor: pointer; }
 
 .character-info-wrapper {
-  margin: 10% auto 0;
+  margin: 5% auto 0;
   display: table;
   position: relative;
   top: 50;
@@ -333,6 +333,9 @@ body {
 
   .character-display {
     height: 100vh; }
+
+  .character-info-wrapper {
+    margin: 10% auto 0; }
 
   .character-info-card {
     width: 90%; }
