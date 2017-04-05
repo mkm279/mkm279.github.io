@@ -21,8 +21,8 @@ var Avatar = function() {
                 $('#'+id).fadeIn('slow');
                 $('.character-info-box').addClass('rotate');
                 $.getJSON("../jedi.json", function(data) {
-                    $('#'+id).find('.character-info-card h2').text(data[('input[name=yoda]:checked').val()].name);
-                    $('#'+id).find('.character-info-card p').text(data[('input[name=yoda]:checked').val()].about);
+                    $('#'+id).find('.character-info-card h2').text(data[$('input[name=yoda]:checked').val()].name);
+                    $('#'+id).find('.character-info-card p').text(data[$('input[name=yoda]:checked').val()].about);
                 });
             }
             else {
